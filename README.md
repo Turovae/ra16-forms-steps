@@ -1,3 +1,7 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/c40fnr9cbeau9lwi?svg=true)](https://ci.appveyor.com/project/Turovae/ra16-forms-steps)
+
+---
+
 Учёт тренировок
 ===
 
