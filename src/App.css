@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +45,27 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.steps-form {
+  display: flex;
+  border: 1px solid black;
+}
+
+.form-col {
+  border: 1px solid blue;
+  padding: 10px;
+  display: flex;
+  align-items: end;
+}
+
+.form-control {
+  border: 2px solid black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 18px;
+  height: 42px;
+  vertical-align: middle;
+  width: 100%;
 }
