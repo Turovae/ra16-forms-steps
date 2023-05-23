@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 #root {
-  max-width: 1280px;
+  max-width: 760px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -11,49 +13,22 @@
   box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+button {
+  background-color: #fff;
+  border: none;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+button:hover {
+  background-color: #eee;
+  cursor: pointer;
 }
 
 .steps-form {
   display: flex;
-  border: 1px solid black;
+  margin-bottom: 20px;
 }
 
 .form-col {
-  border: 1px solid blue;
   padding: 10px;
   display: flex;
   align-items: end;
@@ -68,4 +43,51 @@
   height: 42px;
   vertical-align: middle;
   width: 100%;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-hint {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.steps-table {
+  width: 100%;
+}
+
+.result-body {
+  border: 2px solid #000;
+  border-radius: 10px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 20px;
+}
+
+.row-header {
+  border: 2px solid transparent;
+}
+
+.result-controls {
+  width: 100px;
+}
+
+.row-btn {
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 24px;
+}
+
+.result-date {
+  text-align: left;
+}
+
+.result-controls {
+  text-align: right;
 }
