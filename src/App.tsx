@@ -18,11 +18,13 @@ function App(): JSX.Element {
     }
   ]
   );
-  const [ editedStep, setEditedStep ] = useState({
+  const initEditedStep = {
     id: '',
     date: '',
     distance: '',
-  });
+  }
+
+  const [ editedStep, setEditedStep ] = useState(initEditedStep);
 
   const changeSteps = (data: Step): void => {
     setSteps((last) => {
@@ -30,6 +32,7 @@ function App(): JSX.Element {
         ...last,
         data
       ];
+      setEditedStep(initEditedStep);
       return current.sort((item1, item2) => {
         if (item1.date > item2.date) {
           return 1;
@@ -51,12 +54,14 @@ function App(): JSX.Element {
   }
 
   const startEditRow = (id: string): void => {
-    // console.log(id)
-
     const current = steps.find((item) => item.id === id);
     if (steps.length > 0) {
       if (current) {
         setEditedStep( current );
+
+        setSteps((last) => {
+          return last.filter((item) => item !== current);
+        })
       }
     }
   }

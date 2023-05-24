@@ -22,9 +22,9 @@ function StepsForm(props: FormProps): JSX.Element {
 
   console.log(form);
 
-  // if (body) {
-  //   setForm(body);
-  // }
+  if (body.id !== form.id) {
+    setForm(body);
+  }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -74,6 +74,7 @@ function StepsForm(props: FormProps): JSX.Element {
               name='distance'
               value={form.distance}
               onChange={handlerChange}
+              pattern="\d+(\.\d+)?"
               required/>
           </label>
         </div>
