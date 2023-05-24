@@ -4,7 +4,7 @@ import { Step } from "../interface";
 
 interface FormProps {
   onSubmit: Function,
-  body?: Step | undefined,
+  body: Step,
 }
 
 function StepsForm(props: FormProps): JSX.Element {
