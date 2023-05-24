@@ -1,5 +1,3 @@
-// import { BaseSyntheticEvent } from 'react';
-// import React from 'react';
 import { useState } from 'react';
 import './App.css';
 import StepsForm from './components/StepsForm';
@@ -20,6 +18,11 @@ function App(): JSX.Element {
     }
   ]
   );
+  const [ editedStep, setEditedStep ] = useState({
+    id: '',
+    date: '',
+    distance: '',
+  });
 
   const changeSteps = (data: Step): void => {
     setSteps((last) => {
@@ -48,12 +51,19 @@ function App(): JSX.Element {
   }
 
   const startEditRow = (id: string): void => {
+    // console.log(id)
 
+    const current = steps.find((item) => item.id === id);
+    if (steps.length > 0) {
+      if (current) {
+        setEditedStep( current );
+      }
+    }
   }
 
   return (
     <>
-      <StepsForm onSubmit={changeSteps} />
+      <StepsForm onSubmit={changeSteps} body={editedStep} />
       <StepsTable steps={steps} deleteRow={deleteRow} editRow={startEditRow} />
     </>
   )

@@ -2,9 +2,7 @@ import { Step } from "../interface";
 import StepsRow from "./StepsRow";
 
 function StepsTable(props: {steps: Step[], editRow: Function, deleteRow: Function}): JSX.Element {
-  const { steps, deleteRow } = props;
-
-  console.log(steps);
+  const { steps, deleteRow, editRow } = props;
 
   return (
     <>
@@ -17,7 +15,7 @@ function StepsTable(props: {steps: Step[], editRow: Function, deleteRow: Functio
         {
           steps.length > 0
             ? (<div className="result-body">
-                {steps.map((item) => <StepsRow {...item} deleteRow={deleteRow} editRow={(id) => console.log(id)} />)}
+                {steps.map((item) => <StepsRow key={item.id} {...item} deleteRow={deleteRow} editRow={editRow} />)}
               </div>)
             : null
         }

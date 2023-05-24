@@ -1,12 +1,14 @@
 import { Row } from "../interface";
 
 function StepsRow(props: Row): JSX.Element {
-  const { id, date, distance, deleteRow } = props;
+  const { id, date, distance, deleteRow, editRow } = props;
 
-  const deleteHandler = (event: React.MouseEventHandler<HTMLButtonElement>): void => {
-    event.preventDefault();
-
+  const deleteHandler = (): void => {
     deleteRow(id);
+  }
+
+  const editHandler = () => {
+    editRow(id);
   }
 
   return (
@@ -14,7 +16,7 @@ function StepsRow(props: Row): JSX.Element {
       <div className="resilt-ceil result-date">{date.split('-').reverse().join('.')}</div>
       <div className="result-ceil result-distance">{distance}</div>
       <div className="result-ceil resilt-controls">
-        <button className='row-btn'>✎</button>
+        <button className='row-btn' onClick={editHandler}>✎</button>
         <button className='row-btn' onClick={deleteHandler}>✘</button>
       </div>
     </div>

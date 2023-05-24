@@ -10,13 +10,21 @@ interface FormProps {
 function StepsForm(props: FormProps): JSX.Element {
   const { onSubmit, body } = props;
 
+  console.log(body);
+
   const initForm: Step = {
     id: '',
     date: '',
     distance: '',
   };
 
-  const [ form, setForm ] = useState(body || initForm);
+  const [ form, setForm ] = useState(body);
+
+  console.log(form);
+
+  // if (body) {
+  //   setForm(body);
+  // }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
