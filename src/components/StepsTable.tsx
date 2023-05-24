@@ -1,7 +1,7 @@
 import { Step } from "../interface";
 import StepsRow from "./StepsRow";
 
-function StepsTable(props: {steps: Step[], editRow: Function, deleteRow: Function}): JSX.Element {
+function StepsTable(props: {steps: Step[], editRow: CallableFunction, deleteRow: CallableFunction}): JSX.Element {
   const { steps, deleteRow, editRow } = props;
 
   return (

@@ -5,8 +5,8 @@ interface Step {
 }
 
 interface Row extends Step {
-  editRow: Function,
-  deleteRow: Function, 
+  editRow: CallableFunction,
+  deleteRow: CallableFunction, 
 }
 
 export type { Step, Row };

@@ -3,14 +3,12 @@ import { v4 as uuidv4 } from 'uuid';
 import { Step } from "../interface";
 
 interface FormProps {
-  onSubmit: Function,
+  onSubmit: CallableFunction,
   body: Step,
 }
 
 function StepsForm(props: FormProps): JSX.Element {
   const { onSubmit, body } = props;
-
-  console.log(body);
 
   const initForm: Step = {
     id: '',
